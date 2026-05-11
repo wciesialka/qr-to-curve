@@ -7,7 +7,7 @@ Convert qr codes to curves
 
 Please ensure QR codes follow the following format:
 
-- sRGB Colorspace
+- Black and white
 - PNG file format
 - 300 DPI
 - Module Size of 4
