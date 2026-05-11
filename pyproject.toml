@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qr-to-curve"
+description = "Turn QR Codes into Curves"
+authors = [
+  {name = "Willow Ciesialka", email = "wciesialka@gmail.com"}
+]
+license-files = ["LICENSE"]
+keywords = ["qr", "curve"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Graphics"
+]
+requires-python = ">= 3.13"
+dynamic = ["version", "readme"]
+
+[project.urls]
+Homepage = "https://github.com/wciesialka/qr-to-curve"
+Repository = "https://github.com/wciesialka/qr-to-curve.git"
+Issues = "https://github.com/wciesialka/qr-to-curve/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "qrtocurve.__version__"}
+readme = {file = "README.md", content-type="text/markdown"}
+dependencies = {file = "requirements.txt"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["qrtocurve*"]  
+
+[project.scripts]
+qr-to-curve = "qrtocurve:__main__.main"
