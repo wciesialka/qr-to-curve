@@ -1,8 +1,8 @@
-from qrtocurve.cli.interface import CLI
+from qrtocurve.cli.interface import QRtoCurveCLI
 
 def main():
-    cli = CLI()
-    cli.act()
+    cli = QRtoCurveCLI()
+    cli()
 
 if __name__ == "__main__":
     main()

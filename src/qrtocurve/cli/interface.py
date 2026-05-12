@@ -5,7 +5,7 @@ from PIL import Image
 class QRtoCurveCLI:
 
     def __init__(self, args=None):
-        parser = argument_parser.parse_args()
+        parser = argument_parser.get_parser()
         parsed_args = vars(parser.parse_args(args=args))
         # Create a copy to avoid accidental data poisoning
         self.__params = deepcopy(parsed_args)
@@ -17,7 +17,7 @@ class QRtoCurveCLI:
         :return: The image given by arguments.
         :rtype: Image
         '''
-        filepath = self.__params["filepath"]
+        filepath = self.__params["image_file"]
         try:
             img = Image.open(filepath)
         except:
@@ -32,5 +32,8 @@ class QRtoCurveCLI:
         '''
         img = self.__get_image()
         # TODO: The rest
+    
+    def __call__(self):
+        self.act()
         
     

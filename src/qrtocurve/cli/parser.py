@@ -22,8 +22,8 @@ def get_parser() -> argparse.ArgumentParser:
     :rtype: argparse.ArgumentParser
     '''
     parser_opts = {
-        description: "Convert qr codes to curves.",
-        epilog: """Please ensure QR codes follow the following format:
+        "description": "Convert qr codes to curves.",
+        "epilog": """Please ensure QR codes follow the following format:
                         - Black and white
                         - PNG file format
                         - 300 DPI
@@ -33,6 +33,5 @@ def get_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(**parser_opts)
     parser.add_argument("image_file", 
         type=_readable_file_argparse_type,
-        help="The path of the QR code image.",
-        dest="filepath")
+        help="The path of the QR code image.")
     return parser
