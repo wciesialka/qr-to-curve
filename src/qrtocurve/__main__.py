@@ -1,5 +1,8 @@
+from qrtocurve.cli.interface import CLI
+
 def main():
-    print("Hello, world!")
+    cli = CLI()
+    cli.act()
 
 if __name__ == "__main__":
     main()
