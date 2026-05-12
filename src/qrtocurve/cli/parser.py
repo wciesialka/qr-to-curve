@@ -31,5 +31,8 @@ def get_parser() -> argparse.ArgumentParser:
                    If you do not follow these specifications, the script is not guaranteed to work."""
     }
     parser = argparse.ArgumentParser(**parser_opts)
-    parser.add_argument("image_file", type=_readable_file_argparse_type)
+    parser.add_argument("image_file", 
+        type=_readable_file_argparse_type,
+        help="The path of the QR code image.",
+        dest="filepath")
     return parser
